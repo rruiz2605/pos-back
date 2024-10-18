@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS.WebApi", "POS.WebApi\POS.WebApi.csproj", "{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{97A1EDA3-8C8B-4C4D-A27B-921D57C2FE8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Api", "1.Api", "{C0ED89AC-0A1C-4B1B-B4B9-D4B48AABCA2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A30EFD7-B4D9-4EB0-896D-7DEB6D9F1478} = {C0ED89AC-0A1C-4B1B-B4B9-D4B48AABCA2B}
+		{C0ED89AC-0A1C-4B1B-B4B9-D4B48AABCA2B} = {97A1EDA3-8C8B-4C4D-A27B-921D57C2FE8E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5800FB99-E73E-462B-831C-3DB61E54A4D0}
+	EndGlobalSection
+EndGlobal
