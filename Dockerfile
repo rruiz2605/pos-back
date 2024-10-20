@@ -9,7 +9,15 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["POS.Security/POS.Security.csproj", "POS.Security/"]
+COPY ["POS.Domain/POS.Domain.csproj", "POS.Domain/"]
+COPY ["POS.Application/POS.Application.csproj", "POS.Application/"]
+COPY ["POS.Infrastructure/POS.Infrastructure.csproj", "POS.Infrastructure/"]
 COPY ["POS.WebApi/POS.WebApi.csproj", "POS.WebApi/"]
+RUN dotnet restore "./POS.Security/POS.Security.csproj"
+RUN dotnet restore "./POS.Domain/POS.Domain.csproj"
+RUN dotnet restore "./POS.Application/POS.Application.csproj"
+RUN dotnet restore "./POS.Infrastructure/POS.Infrastructure.csproj"
 RUN dotnet restore "./POS.WebApi/POS.WebApi.csproj"
 COPY . .
 WORKDIR "/src/POS.WebApi"
