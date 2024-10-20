@@ -17,4 +17,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\POS.Infrastructure\POS.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

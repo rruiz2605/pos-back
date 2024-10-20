@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\POS.Domain\POS.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
