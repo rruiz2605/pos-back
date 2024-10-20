@@ -7,7 +7,7 @@ namespace POS.Application.Contracts.Persistence
     public interface IBaseRepository<T> where T : BaseEntity
     {
         Task<IReadOnlyList<T>> ListAllAsync();
-        Task<T?> GetByIdAsync(long id);
+        Task<T?> GetByIdAsync(uint id);
         Task<T?> GetAsync(Expression<Func<T, bool>> predicate = null,
                                      Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                      bool disableTracking = true,
