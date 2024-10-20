@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using POS.Application.Features.Clients.Commands;
 using POS.Application.Features.Clients.Queries;
 using System.Net;
 
@@ -17,7 +18,7 @@ namespace POS.WebApi.Controllers
         }
 
         /// <summary>
-        /// Obtiene la información del cliente
+        /// Obtiene lista de clientes
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -25,6 +26,20 @@ namespace POS.WebApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IEnumerable<ListResponse>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult<IEnumerable<ListResponse>>> List([FromQuery] ListQuery request)
+        {
+            return Ok(await mediator.Send(request));
+        }
+
+        /// <summary>
+        /// Crea un cliente
+        /// </summary>
+        /// <param name="request"></param>
+        /// <!-- Bad request response -->
+        /// <returns></returns>
+        [HttpPost("[action]")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(CreateResponse))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<CreateResponse>> Create([FromBody] CreateCommand request)
         {
             return Ok(await mediator.Send(request));
         }
