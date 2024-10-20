@@ -22,7 +22,7 @@ namespace POS.Infrastructure.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public virtual async Task<T?> GetByIdAsync(long id)
+        public virtual async Task<T?> GetByIdAsync(uint id)
         {
             return await _context.Set<T>().FindAsync(id);
         }

@@ -43,5 +43,19 @@ namespace POS.WebApi.Controllers
         {
             return Ok(await mediator.Send(request));
         }
+
+        /// <summary>
+        /// Actualiza un cliente
+        /// </summary>
+        /// <param name="request"></param>
+        /// <!-- Bad request response -->
+        /// <returns></returns>
+        [HttpPut("[action]")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(UpdateResponse))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<UpdateResponse>> Update([FromBody] UpdateCommand request)
+        {
+            return Ok(await mediator.Send(request));
+        }
     }
 }
