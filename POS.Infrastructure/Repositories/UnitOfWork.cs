@@ -7,6 +7,9 @@ namespace POS.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private IBaseRepository<Client> _clientRepository;
+        public IBaseRepository<Client> ClientRepository => _clientRepository ??= Repository<Client>();
+
         private Hashtable repositories;
         public readonly GeneralContext context;
 

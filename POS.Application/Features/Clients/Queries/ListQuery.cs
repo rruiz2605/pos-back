@@ -44,7 +44,7 @@ namespace POS.Application.Features.Clients.Queries
             var cellphoneStandardized = Util.StandarisizeCellphoneNumber(request.CellphoneNumber);
             request.FullName = request.FullName?.Trim() ?? string.Empty;
 
-            var list = await unitOfWork.Repository<Client>()
+            var list = await unitOfWork.ClientRepository
                 .ListAsync(x => (string.IsNullOrWhiteSpace(request.FullName) || x.FullName.Contains(request.FullName))
                 && (string.IsNullOrWhiteSpace(request.CellphoneNumber) || x.CellphoneNumber.Contains(request.CellphoneNumber) || x.CellphoneNumberSearch.Contains(cellphoneStandardized)));
 

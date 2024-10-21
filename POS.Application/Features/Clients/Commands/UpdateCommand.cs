@@ -61,8 +61,7 @@ namespace POS.Application.Features.Clients.Commands
             
             mapper.Map(request, entity);
 
-            unitOfWork.Repository<Client>()
-                .Update(entity!);
+            unitOfWork.ClientRepository.Update(entity!);
 
             await unitOfWork.Complete();
 

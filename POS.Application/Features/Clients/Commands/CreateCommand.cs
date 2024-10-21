@@ -58,8 +58,7 @@ namespace POS.Application.Features.Clients.Commands
         {
             var entity = mapper.Map<Client>(request);
 
-            unitOfWork.Repository<Client>()
-                .Add(entity);
+            unitOfWork.ClientRepository.Add(entity);
 
             await unitOfWork.Complete();
 
