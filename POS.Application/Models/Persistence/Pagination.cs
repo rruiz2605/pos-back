@@ -15,6 +15,6 @@
     public class PaginationResponse<T>
     {
         public int Total { get; set; }
-        public List<T> Content { get; set; }
+        public IEnumerable<T> Content { get; set; }
     }
 }

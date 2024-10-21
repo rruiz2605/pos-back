@@ -19,6 +19,10 @@ namespace POS.Application.Contracts.Persistence
         T Add(T entity);
         T Update(T entity);
         void Delete(T entity);
-        PaginationResponse<T> ListPaginatedAsync(IReadOnlyList<T> query, int page, int pageSize);
+        Task<PaginationResponse<T>> ListPaginatedAsync(int page, int pageSize, 
+                                     Expression<Func<T, bool>> predicate = null,
+                                     Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                     bool disableTracking = true,
+                                     params Expression<Func<T, object>>[] includes);
     }
 }
