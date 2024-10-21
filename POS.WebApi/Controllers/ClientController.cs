@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using POS.Application.Features.Clients.Commands;
 using POS.Application.Features.Clients.Queries;
+using POS.Application.Models.Persistence;
 using System.Net;
 
 namespace POS.WebApi.Controllers
@@ -26,6 +27,19 @@ namespace POS.WebApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(IEnumerable<ListResponse>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult<IEnumerable<ListResponse>>> List([FromQuery] ListQuery request)
+        {
+            return Ok(await mediator.Send(request));
+        }
+
+        /// <summary>
+        /// Obtiene lista paginada de clientes
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpGet("[action]")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PaginationResponse<PaginatedListResponse>))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<PaginationResponse<PaginatedListResponse>>> PaginatedList([FromQuery] PaginatedListQuery request)
         {
             return Ok(await mediator.Send(request));
         }
